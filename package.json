@@ -1,0 +1,16 @@
+{
+  "name": "vpn-proxy-checker",
+  "version": "1.0.0",
+  "description": "Discord Bot Vpn proxy checker",
+  "main": "bot.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node ."
+  },
+  "author": "MR.GHOST",
+  "license": "ISC",
+  "dependencies": {
+    "discord.js": "^11.5.1",
+    "snekfetch": "^4.0.4"
+  }
+}
