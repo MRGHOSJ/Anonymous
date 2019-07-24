@@ -2,16 +2,16 @@ const Discord = require('discord.js')
 const snekfetch = require('snekfetch')
 
 module.exports.run = (message,args,NotSureIp) => {
-    ApiFresh(message,args,NotSureIp)
+    ApiFresh(message,args)
     firstApi(message,args)
+    SecondApi(message,args,NotSureIp)
 }
 
-ApiFresh = async (message,args,NotSureIp) =>{
+ApiFresh = async (message,args) =>{
     await snekfetch.get('http://check.getipintel.net/check.php?ip='+args[0]+'&contact=bouzouitayassine@gmail.com')
-    .then(r=>{
-        console.log(r.body)
+    .then(function(){
+        return;
     })
-    .then(SecondApi(message,args,NotSureIp))
 }
 
 firstApi = async (message,args) => {
