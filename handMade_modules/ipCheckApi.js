@@ -8,7 +8,7 @@ module.exports.run = (message,args) => {
             firstApi(message,args)
             SecondApi(message,args)
         }
-        , 500);
+        , 1000);
     
 }
 
