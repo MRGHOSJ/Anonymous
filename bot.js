@@ -1,8 +1,6 @@
 const Discord = require('discord.js');
 const client = new Discord.Client();
 
-let NotSureIp = []
-
 // Api
 const HandleIpCheckApi = require('./handMade_modules/ipCheckApi')
 
@@ -31,7 +29,7 @@ client.on('message', message => {
                         if(!IpPattern.test(args[0])){
                             return message.reply('IP incorrect!')
                         }else{
-                            HandleIpCheckApi.run(message,args,NotSureIp)
+                            HandleIpCheckApi.run(message,args)
                         }
                     }else{
                         return message.reply('No IP was inputed!')

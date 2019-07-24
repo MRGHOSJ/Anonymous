@@ -1,12 +1,12 @@
 const Discord = require('discord.js')
 const snekfetch = require('snekfetch')
 
-module.exports.run = (message,args,NotSureIp) => {
+module.exports.run = (message,args) => {
     ApiFresh(message,args)
     setTimeout(
         function(){
             firstApi(message,args)
-            SecondApi(message,args,NotSureIp)
+            SecondApi(message,args)
         }
         , 1000);
     
@@ -36,7 +36,6 @@ firstApi = async (message,args) => {
         .addField('ISP: ', body.ISP , true)
         .addField('Organization: ', body.organization, true)
         .addField('Timezone: ', body.timezone, true)
-        .addField('PS: ', "If Chances= 0 run the cmd again. (If your got 0 as a chance twice that means the ip is clean!)")
         .setTimestamp()
         .setFooter('Ip Checker |');
 
@@ -46,7 +45,7 @@ firstApi = async (message,args) => {
     })
 }
 
-SecondApi = async (message,args,NotSureIp) => {
+SecondApi = async (message,args) => {
     await snekfetch.get('http://check.getipintel.net/check.php?ip='+args[0]+'&contact=bouzouitayassine@gmail.com')
     .then(r =>{
         let body = r.body
@@ -54,12 +53,7 @@ SecondApi = async (message,args,NotSureIp) => {
         let VpnProxy = ""
 
         if (body == 0){
-            if(NotSureIp.indexOf(args[0]) != -1){
-                VpnProxy = ":white_check_mark: Clean"
-            }else{
-                VpnProxy = ":interrobang: Not Sure"
-                NotSureIp.push(args[0])
-            }
+            VpnProxy = ":white_check_mark: Clean"
         }else if (body < 0.95 && body > 0){
             VpnProxy = ":heavy_check_mark: Low Risk"
         }else if (body == 1){
