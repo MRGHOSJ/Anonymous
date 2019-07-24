@@ -3,8 +3,13 @@ const snekfetch = require('snekfetch')
 
 module.exports.run = (message,args,NotSureIp) => {
     ApiFresh(message,args)
-    firstApi(message,args)
-    SecondApi(message,args,NotSureIp)
+    setTimeout(
+        function(){
+            firstApi(message,args)
+            SecondApi(message,args,NotSureIp)
+        }
+        , 1000);
+    
 }
 
 ApiFresh = async (message,args) =>{
