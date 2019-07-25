@@ -3,12 +3,16 @@ const client = new Discord.Client();
 
 // Api
 const HandleIpCheckApi = require('./handMade_modules/ipCheckApi')
+
+// hand made modules
 const HandleCredits= require('./handMade_modules/credits')
+const HandleReportBug = require('./handMade_modules/reportBug')
+const HandleHelp = require('./handMade_modules/help')
 
 client.on('ready', () => {
   console.log(`Logged in as ${client.user.tag}!`);
 
-  client.user.setActivity('@'+client.user.username+' '+'CheckIP')
+  client.user.setActivity('@'+client.user.username+' '+'Help')
 });
 
 client.on('message', message => {
@@ -39,6 +43,18 @@ client.on('message', message => {
 
                 if (command === "credits"){
                     HandleCredits.run(message)
+                }
+
+                if (command === "bug"){
+                    if(args[0]){
+                        HandleReportBug.run(message,args)
+                    }else{
+                        return message.reply("You didn't input any arguments!")
+                    }
+                }
+
+                if (command === "help"){
+                    HandleHelp.run(message, client)
                 }
 
             }
