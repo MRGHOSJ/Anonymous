@@ -58,7 +58,6 @@ firstApi = async (message,args) => {
         const FirstApiEmbed = new Discord.RichEmbed()
         .setColor('#0099ff')
         .setAuthor(message.author.username, message.author.avatarURL)
-        .setDescription("If chances are lower than 0.9 that means, the bot can't identify this user having VPN or not.")
         .setThumbnail("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSf8Nj7qJUXxFGNjGUKXHNp59Elswqoh4e4js4GHHaBBaiUibM8")
         .addBlankField()
         .addField('Country Code: ', countryCode, true)

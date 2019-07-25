@@ -3,6 +3,7 @@ const client = new Discord.Client();
 
 // Api
 const HandleIpCheckApi = require('./handMade_modules/ipCheckApi')
+const HandleCredits= require('./handMade_modules/credits')
 
 client.on('ready', () => {
   console.log(`Logged in as ${client.user.tag}!`);
@@ -34,6 +35,10 @@ client.on('message', message => {
                     }else{
                         return message.reply('No IP was inputed!')
                     }
+                }
+
+                if (command === "credits"){
+                    HandleCredits.run(message)
                 }
 
             }
