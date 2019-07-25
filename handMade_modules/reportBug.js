@@ -11,7 +11,7 @@ module.exports.run = (message,client,args) => {
         .addField("Bug Repot: ", fullArg)
         .setTimestamp()
         .setFooter('Help |');
-        client.guilds.get(603316131960324108).channels.get(604051435411472405).send(BugReport)
+        client.guilds.get(603316131960324108).client.channels.get(604051435411472405).send(BugReport)
 
         message.reply("Bug report was sent to dev!")
 }
