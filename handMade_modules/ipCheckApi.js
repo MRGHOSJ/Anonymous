@@ -41,7 +41,9 @@ firstApi = async (message,args) => {
 
         message.channel.send(FirstApiEmbed);
     }).catch(function(){
-        message.reply('An Error has occurred. Please try again!')
+        message.reply("StatusCode: "+r.statusCode)
+        message.reply("StatusText: "+r.statusText)
+        console.log(r)
     })
 }
 
