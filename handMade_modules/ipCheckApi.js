@@ -24,25 +24,55 @@ firstApi = async (message,args) => {
     .then(r =>{
         let body = r.body
 
+        let countryCode = body.country_code
+        let region = body.region
+        let city = body.city
+        let ISP = body.ISP
+        let organization = body.organization
+        let timezone = body.timezone
+
+        if (countryCode === ""){
+            countryCode = undefined
+        }
+
+        if (region === ""){
+            region = undefined
+        }
+
+        if (city === ""){
+            city = undefined
+        }
+
+        if (ISP === ""){
+            ISP = undefined
+        }
+
+        if (organization === ""){
+            organization = undefined
+        }
+
+        if (timezone === ""){
+            timezone = undefined
+        }
+
         const FirstApiEmbed = new Discord.RichEmbed()
         .setColor('#0099ff')
         .setAuthor(message.author.username, message.author.avatarURL)
         .setDescription("If chances are lower than 0.9 that means, the bot can't identify this user having VPN or not.")
         .setThumbnail("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSf8Nj7qJUXxFGNjGUKXHNp59Elswqoh4e4js4GHHaBBaiUibM8")
         .addBlankField()
-        .addField('Country Code: ', body.country_code, true)
-        .addField('Region: ', body.region , true)
-        .addField('City: ', body.city, true)
-        .addField('ISP: ', body.ISP , true)
-        .addField('Organization: ', body.organization, true)
-        .addField('Timezone: ', body.timezone, true)
+        .addField('Country Code: ', countryCode, true)
+        .addField('Region: ', region , true)
+        .addField('City: ', city, true)
+        .addField('ISP: ', ISP , true)
+        .addField('Organization: ', organization, true)
+        .addField('Timezone: ', timezone, true)
         .setTimestamp()
         .setFooter('Ip Checker |');
 
         message.channel.send(FirstApiEmbed);
     }).catch(r=>{
-        message.reply("StatusCode: "+r.statusCode)
-        message.reply("StatusText: "+r.statusText)
+        message.reply('An Error has occurred. Please try again!')
         console.log(r)
     })
 }
