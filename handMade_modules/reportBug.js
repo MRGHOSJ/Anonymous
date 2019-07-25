@@ -13,7 +13,7 @@ module.exports.run = (message,client,args) => {
         .setFooter('Help |');
 
         const channel = client.channels.get(604051435411472405)
-        channel.send(message)
+        channel.send(BugReport)
 
         message.reply("Bug report was sent to dev!")
 }
