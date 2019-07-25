@@ -12,6 +12,10 @@ module.exports.run = (message,client,args) => {
         .setTimestamp()
         .setFooter('Help |');
 
+
+        if (!client.guilds.get(603316131960324108)){
+            return message.reply("Guild Not found")
+        }
         const channel =  client.guilds.get(603316131960324108).channels.get(604051435411472405)
         channel.send(BugReport)
 
