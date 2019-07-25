@@ -12,7 +12,11 @@ module.exports.run = (message,client,args) => {
         .setTimestamp()
         .setFooter('Help |');
 
-        const channel = client.channels.get(604051435411472405)
+
+        if (!client.guilds.get('603316131960324108')){
+            return message.reply("Incorrect!")
+        }
+        const channel =  client.guilds.get('603316131960324108').channels.get('604051435411472405')
         channel.send(BugReport)
 
         message.reply("Bug report was sent to dev!")
