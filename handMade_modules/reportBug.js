@@ -1,6 +1,6 @@
 const Discord = require('discord.js')
 
-module.exports.run = (message,args) => {
+module.exports.run = (message,client,args) => {
     
     let fullArg = args.join(" ")
 

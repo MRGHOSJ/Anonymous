@@ -47,7 +47,7 @@ client.on('message', message => {
 
                 if (command === "bug"){
                     if(args[0]){
-                        HandleReportBug.run(message,args)
+                        HandleReportBug.run(message,client,args)
                     }else{
                         return message.reply("You didn't input any arguments!")
                     }
