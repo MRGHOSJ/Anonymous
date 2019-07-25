@@ -40,7 +40,7 @@ firstApi = async (message,args) => {
         .setFooter('Ip Checker |');
 
         message.channel.send(FirstApiEmbed);
-    }).catch(function(){
+    }).catch(r=>{
         message.reply("StatusCode: "+r.statusCode)
         message.reply("StatusText: "+r.statusText)
         console.log(r)
