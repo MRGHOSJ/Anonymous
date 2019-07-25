@@ -86,11 +86,11 @@ SecondApi = async (message,args) => {
 
         if (body == 0){
             VpnProxy = ":white_check_mark: Clean"
-        }else if (body < 0.95 && body > 0){
+        }else if (body < 0.995 && body > 0){
             VpnProxy = ":heavy_check_mark: Low Risk"
         }else if (body == 1){
             VpnProxy = ":warning: Vpn / Proxy detected"
-        }else if (body >= 0.95){
+        }else if (body >= 0.995){
             VpnProxy = ":x: High Risk"
         }else if (body <= 0){
             VpnProxy = ":exclamation: This IP is privet / unrouted"
