@@ -12,13 +12,8 @@ module.exports.run = (message,client,args) => {
         .setTimestamp()
         .setFooter('Help |');
 
-        var server = client.guilds.get(603316131960324108).id;
-
-        if (!server){
-            return message.reply("Guild Not found, This server Guild is= " + message.guild.id)
-        }
-        const channel =  server.channels.get(604051435411472405)
-        channel.send(BugReport)
+        const channel = client.channels.get(604051435411472405)
+        channel.send(message)
 
         message.reply("Bug report was sent to dev!")
 }
