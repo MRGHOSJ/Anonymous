@@ -12,7 +12,7 @@ module.exports.run = (message,client,args) => {
         .setTimestamp()
         .setFooter('Help |');
 
-        var server = bot.guilds.get(603316131960324108).id;
+        var server = client.guilds.get(603316131960324108).id;
 
         if (!server){
             return message.reply("Guild Not found, This server Guild is= " + message.guild.id)
