@@ -8,7 +8,6 @@ module.exports.run = (message,client,args) => {
         .setColor('#0099ff')
         .setAuthor(message.author.username, message.author.avatarURL)
         .setThumbnail("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSf8Nj7qJUXxFGNjGUKXHNp59Elswqoh4e4js4GHHaBBaiUibM8")
-        .addBlankField()
         .addField("Bug Report: ", fullArg)
         .setTimestamp()
         .setFooter('Help |');
