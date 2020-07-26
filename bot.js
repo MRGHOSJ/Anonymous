@@ -24,7 +24,7 @@ client.on('message', message => {
         }else{
             if(message.isMentioned(client.user)){
 
-                const mantionLength = client.user.id.length +3
+                const mantionLength = client.user.id.length +4
                 const args = message.content.slice(mantionLength).trim().split(/ +/g);
                 const command = args.shift().toLowerCase();
 
